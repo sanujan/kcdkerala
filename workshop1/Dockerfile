@@ -1,5 +1,5 @@
 FROM docker.io/library/golang
-RUN . /kcdkerala
+COPY . /kcdkerala
 WORKDIR /kcdkerala
 RUN go build main.go
 ENTRYPOINT /kcdkerala/main
