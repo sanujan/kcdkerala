@@ -4,7 +4,6 @@ WORKDIR /kcdkerala
 RUN go build main.go
 ENTRYPOINT /kcdkerala/main
 FROM alpine:latest
-RUN apk --no-cache add ca-certificates
 WORKDIR /root
 COPY --from=firstbuild /kcdkerala/main .
 CMD ["./main"]
